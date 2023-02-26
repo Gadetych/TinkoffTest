@@ -10,17 +10,17 @@ public class Rtask1 {
         char[] buf = new char[10];
         int index = 0;
         String answer = "NO";
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == '?') {
-                buf[index] = chars[i];
+        for (char aChar : chars) {
+            if (aChar == '?') {
+                buf[index] = aChar;
                 index++;
             } else {
                 boolean flag = true;
                 for (int j = 0; j < buf.length; j++) {
-                    if (buf[j] == chars[i]) {
+                    if (buf[j] == aChar) {
                         buf = new char[10];
                         flag = false;
-                        buf[0] = chars[i];
+                        buf[0] = aChar;
                         index = 1;
                         break;
                     } else if (buf[j] == '\u0000') {
@@ -28,7 +28,7 @@ public class Rtask1 {
                     }
                 }
                 if (flag) {
-                    buf[index] = chars[i];
+                    buf[index] = aChar;
                     index++;
                 }
             }
@@ -38,6 +38,7 @@ public class Rtask1 {
             }
         }
         System.out.println(answer);
+        System.out.println("The end!");
     }
 
 }
